@@ -1,10 +1,16 @@
-- 👋 Hi, I’m @callmesheep
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+#include<stdio.h>
 
-<!---
-callmesheep/callmesheep is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+int main(){
+    int n;
+    int tachso;// tao bien de tach so = toan tu chia du
+    int s = 0;// de tong cac so 
+    printf("Nhap n: ");
+    scanf("%d",&n);
+    for(;n!=0;){// dat vao for de chay 
+        tachso = n % 10;// chi so nguyen de lay so cuoi
+        s += tachso;
+        n /= 10;
+    }    
+    printf("%d",s);
+    return 0;
+}
