@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+	int height, i , j;
+	do{
+		printf("");
+		scanf("%d", &height);
+	}
+	while(height < 2 );
+		printf("\n");
+		for ( i = 1; i < height; i++){
+			for(j = 1; j <= i; j++)
+			printf("%d", j);
+			printf("\n");
+}
+	return 0;
+}
