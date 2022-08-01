@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+	int n;
+	int result = 0;
+	scanf("%d", &n);
+	printf(" input number: ");
+	if(n >= 0 && n < 100 ){
+		result++;
+	}else  {
+            printf("%d", result);
+        }
+    return 0;
+}
