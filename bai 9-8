@@ -1,0 +1,61 @@
+#include<stdio.h>
+
+void swap(int *x, int *y) 
+{
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+void bubbleSort(int n, int *ptr) 	//truyen 1 mang vao cho ham thi
+									//chi co dia chi cua mang duoc truyen vao;
+{
+	int i,j;
+	//op1
+	for(i=0;i<n;i++) {
+		for(j=0;j<n-i-1;j++) {
+			if(*(ptr+j)>*(ptr+j+1)){
+				swap(ptr+j, ptr+j+1); //swap using pointers;
+//				swap(&ptr[j], &ptr[j+1]); //swap using array;
+			}
+		}
+	}
+//	//op2
+//	for(i=0;i<n;i++) {
+//		for(j=i+1;j<n;j++) {
+//			if(*(ptr+j)<*(ptr+i)) {
+//				swap(&ptr[j],&ptr[i]);
+//			}
+//		}
+//	}
+}
+void insertionSort(int n, int *ptr)
+{
+	int i,j,temp;
+	for(i=1;i<n;i++) {
+		j=i-1;
+		temp = *(ptr+i);
+		while (j>=0 && *(ptr+j) > temp) {
+			*(ptr+j+1) = *(ptr+j);
+			j--;
+		}
+		*(ptr+j+1) = temp;
+	}
+}
+void displayResult(int n, int *ptr)
+{
+	printf("\n");
+	for (int i=0;i<n;i++) {
+		printf("%d ", *(ptr+i));
+//		printf("%d ", ptr[i]);//in kieu array
+	}
+}
+int main() {
+	int i,n=5;
+	int arr[] = {12,9,3,6,5};
+	bubbleSort(n, arr);//goi ham va truyen dia chi cua mang vao cho ham
+	displayResult(n, arr);
+	insertionSort(n, arr);
+	displayResult(n, arr);
+	return 0;
+}
